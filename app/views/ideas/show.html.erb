@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @idea.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @idea.description %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <!-- 2019.10.30 U S -->
+  <!--<%= @idea.picture %> -->
+  <%= image_tag(@idea.picture_url, width: 600) if @idea.picture.present? %>
+  <!-- 2019.10.30 U E -->
+</p>
+
+<%= link_to 'Edit', edit_idea_path(@idea) %> |
+<%= link_to 'Back', ideas_path %>
